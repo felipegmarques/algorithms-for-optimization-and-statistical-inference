@@ -10,6 +10,5 @@ def change(coins, value):
     weights = coins
     functions = [coin_function_builder(coin, value) for coin in coins]
     conv_funciton = max_convolution_weighted(weights, *functions)
-    print(conv_funciton)
     result = conv_funciton[value]  
     return result['conf'] if result['val'] != minus_inf else []
